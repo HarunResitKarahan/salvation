@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "title": "Project Title",
+    "description": "Description"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "navbar": {
+    "login": "Login",
+    "signUp": "Sign Up",
+    "tabs": [
+      {
+        "tabName": "Features",
+        "tabIcon": ""
+      },
+      {
+        "tabName": "Customers",
+        "tabIcon": ""
+      },
+      {
+        "tabName": "Integrations",
+        "tabIcon": ""
+      }
+    ]
+  },
+  "login": {
+    "login": "Login",
+    "signUp": "Sign Up"
+  },
+  "page": {
+    "home": {
+      "title": "Welcome to NextJs i18n",
+      "description": "Internationalization in NextJs 13 App router"
+    }
+  }
+}

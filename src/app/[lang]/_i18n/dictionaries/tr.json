@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "title": "Proje başlığı",
+    "description": "Açıklama"
+  },
+  "navigation": {
+    "home": "Ana Sayfa"
+  },
+  "navbar": {
+    "login": "Giriş Yap",
+    "signUp": "Kayıt ol",
+    "tabs": [
+      {
+        "tabName": "Öne Çıkanlar",
+        "tabIcon": ""
+      },
+      {
+        "tabName": "Müşteriler",
+        "tabIcon": ""
+      },
+      {
+        "tabName": "Entegrasyonlar",
+        "tabIcon": ""
+      }
+    ]
+  },
+  "login": {
+    "login": "Giriş Yap",
+    "signUp": "Kayıt ol"
+  },
+  "page": {
+    "home": {
+      "title": "NextJs i18n'e hoş geldiniz",
+      "description": "Dil desteği"
+    }
+  }
+}
