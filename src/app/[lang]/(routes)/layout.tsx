@@ -5,6 +5,7 @@ import "./globals.css";
 import { getDictionary } from '../_libs/dictionary';
 import AuthProvider from '../_context/AuthProvider';
 import { Session } from 'next-auth';
+import { ThemeProvider } from '@ui5/webcomponents-react';
 
 const inter = Inter({ subsets: ["latin"] });
 inter.className = `${inter.className} min-h-screen`
@@ -47,9 +48,11 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-          <main>
-            {children}
-          </main>
+          <ThemeProvider>
+            <main>
+              {children}
+            </main>
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

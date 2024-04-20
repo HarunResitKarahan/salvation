@@ -9,7 +9,7 @@ export default async function Home({
 }) {
   const session = await getServerSession(options);
   // const dbUser = db.user.current();
-  console.log("page.tsx", session)
+  // console.log("page.tsx", session)
   // console.log("page.tsx- dbUser", dbUser)
   return (
     <>
