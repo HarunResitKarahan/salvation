@@ -36,12 +36,12 @@ export default function Navbar({
   return (
     <>
       <ShellBar
-        logo={
-          <img
-            alt="SAP Logo"
-            src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
-          />
-        }
+        // logo={
+        //   <img
+        //     alt="SAP Logo"
+        //     src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
+        //   />
+        // }
         menuItems={
           <>
             {/* <StandardListItem data-key="1">Menu Item 1</StandardListItem>
@@ -56,7 +56,6 @@ export default function Navbar({
         onNotificationsClick={function _a() {}}
         onProductSwitchClick={function _a() {}}
         onProfileClick={function _a(e) {
-          console.log(popoverProfileRef)
           // @ts-ignore
           popoverProfileRef.current.showAt(e.detail.targetRef);
         }}

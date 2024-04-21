@@ -32,7 +32,7 @@ export default function SideMenu() {
         onSelectionChange={function _a() {}}
       >
         <SideNavigationItem icon="database" text="Dashboard" />
-        <SideNavigationItem expanded  icon="group" text="People">
+        <SideNavigationItem expanded  icon="group" text="People" wholeItemToggleable={true}>
           <SideNavigationSubItem text="From My Team" />
           <SideNavigationSubItem text="From Other Teams" />
         </SideNavigationItem>
