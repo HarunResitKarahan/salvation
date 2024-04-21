@@ -27,21 +27,44 @@ input:focus {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(233, 235, 240);
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
 }
 
-*::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  --radix-scroll-area-corner-width: 0px;
+  --radix-scroll-area-corner-height: 0px;
+  --scrollbar-size: 9px;
+  --radix-scroll-area-thumb-width: 6px;
 }
+
+/* *::-webkit-scrollbar {
+  display: none;
+} */
+
+.homepageContent {
+  overflow-x: hidden;
+}
+
+
+.homepageContent::-webkit-scrollbar {
+  width: 5px;
+}
+
+.homepageContent::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.homepageContent::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
+}
+
+
+
+/* * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */
 
 @layer utilities {
   .text-balance {

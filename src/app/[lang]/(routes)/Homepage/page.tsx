@@ -54,7 +54,7 @@ export default function Homepage({
           <SideMenu></SideMenu>
         </div>
         <div
-          className="w-full rounded overflow-scroll"
+          className="homepageContent w-full rounded overflow-scroll"
           style={{
             backgroundColor: "#fff",
           }}
