@@ -51,13 +51,13 @@ export const options: NextAuthOptions = {
                     console.log(error)
                     return NextResponse.json({error: error})
                 }
-            },
+            }
         })
     ],
     pages: {
-        // signIn: "/Login",
+        // signIn: `/en/Login`
         // signOut: "/Login",
-        // error: "/Login",
+        // error: "/Login"
         // signIn: '/auth/signin',
         // signOut: '/auth/signout',
         // error: '/auth/error', // Error code passed in query string as ?error=
@@ -89,7 +89,27 @@ export const options: NextAuthOptions = {
             console.log("****************SESSION CALLBACK******************")
             console.log(session)
             return session
-        }
+        },
+        // async redirect({ url, baseUrl }: { url: string, baseUrl: string }) {
+        //     const isRelativeUrl = url.startsWith("/");
+        //     if (isRelativeUrl) {
+        //       return `${baseUrl}${url}`;
+        //     }
+      
+        //     const isSameOriginUrl = new URL(url).origin === baseUrl;
+        //     const alreadyRedirected = url.includes('callbackUrl=')
+        //     if (isSameOriginUrl && alreadyRedirected) {
+        //       const originalCallbackUrl = decodeURIComponent(url.split('callbackUrl=')[1]);
+      
+        //       return originalCallbackUrl;
+        //     }
+      
+        //     if (isSameOriginUrl) {
+        //       return url;
+        //     }
+      
+        //     return baseUrl;
+        //   }
     },
     secret: process.env.NEXTAUTH_SECRET,
     session: {

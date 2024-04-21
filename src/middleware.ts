@@ -54,15 +54,15 @@ const authMiddleware = withAuth(
         const pathname = req.nextUrl.pathname,
             userRole = req.nextauth.token?.role;
         // console.log(pathname.includes('/Login'), userRole)
-        if (pathname.includes('/Login') && userRole !== 'admin') {
-            console.log(pathname.includes('/Login'), userRole)
-            return NextResponse.redirect(
-                new URL(
-                    `/Denied`,
-                    req.url,
-                ),
-            );
-        }
+        // if (pathname.includes('/Login') && userRole !== 'admin') {
+        //     console.log(pathname.includes('/Login'), userRole)
+        //     return NextResponse.redirect(
+        //         new URL(
+        //             `/Denied`,
+        //             req.url,
+        //         ),
+        //     );
+        // }
         return withInitialLoad(req);
     },
     {
@@ -70,13 +70,15 @@ const authMiddleware = withAuth(
             authorized: ({ token }) => token != null
         },
         pages: {
-            // signIn: '/login'
+            signIn: `/tr/Login`,
+            signOut: `/tr/Login`,
+            error: `/tr/Login`
         }
     }
 );
 
 export default function middleware(req: NextRequest) {
-    // return withInitialLoad(req)
+    withInitialLoad(req)
     return (authMiddleware as any)(req);
 }
 

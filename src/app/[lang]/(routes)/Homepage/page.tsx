@@ -5,11 +5,12 @@ import { Locale } from '@/app/[lang]/_i18n/i18n.config'
 import { getDictionary } from '@/app/[lang]/_libs/dictionary'
 import { Image } from "@nextui-org/react";
 import LocaleSwitcher from '../../_components/locale-switcher';
-import { Button, Icon, Label, MessageStrip, Title, Wizard, WizardStep } from '@ui5/webcomponents-react';
+import { Badge, Breadcrumbs, BreadcrumbsItem, Button, DynamicPage, DynamicPageHeader, DynamicPageTitle, FlexBox, Icon, Label, MessageStrip, ObjectStatus, Title, Wizard, WizardStep } from '@ui5/webcomponents-react';
 import "@ui5/webcomponents-icons/dist/product.js";
+import { signOut } from 'next-auth/react'
 
 export default async function Homepage({ lang, session }: { lang: Locale, session: any }) {
-  
+
   // const { navbar } = await getDictionary(lang)
   return (
     <>
@@ -41,6 +42,10 @@ export default async function Homepage({ lang, session }: { lang: Locale, sessio
           </Label>
         </WizardStep>
       </Wizard>
+      <Button onClick={(e) => {
+        e.preventDefault();
+        signOut()
+      }}>Sign Out</Button>
     </>
   )
 }

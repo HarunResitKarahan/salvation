@@ -10,7 +10,7 @@ import { ThemeProvider } from '@ui5/webcomponents-react';
 const inter = Inter({ subsets: ["latin"] });
 inter.className = `${inter.className} min-h-screen`
 type Props = {
-  params: { lang: Locale },
+  params: { lang: Locale, session: Session },
 }
 
 export async function generateMetadata(
@@ -42,17 +42,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
   session: Session;
-  params: { lang: Locale };
+  params: { lang: Locale, session: Session };
 }>) {
   return (
     <html lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-          <ThemeProvider>
             <main>
               {children}
             </main>
-          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>
