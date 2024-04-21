@@ -1,11 +1,7 @@
-"use client"
+"use client";
 import React from "react";
-import {
-    Breadcrumbs,
-    BreadcrumbsItem,
-    Title,
-  } from "@ui5/webcomponents-react";
-  import { LineChart } from "@ui5/webcomponents-react-charts";
+import { Breadcrumbs, BreadcrumbsItem, Title } from "@ui5/webcomponents-react";
+import { LineChart, PieChart } from "@ui5/webcomponents-react-charts";
 
 export default function HomePageContext() {
   return (
@@ -20,6 +16,67 @@ export default function HomePageContext() {
         <BreadcrumbsItem>Notebooks</BreadcrumbsItem>
       </Breadcrumbs>
       <Title level="H2">Homepage</Title>
+      <PieChart
+        dataset={[
+          {
+            name: "January",
+            users: 100,
+          },
+          {
+            name: "February",
+            users: 230,
+          },
+          {
+            name: "March",
+            users: 240,
+          },
+          {
+            name: "April",
+            users: 280,
+          },
+          {
+            name: "May",
+            users: 100,
+          },
+          {
+            name: "June",
+            users: 230,
+          },
+          {
+            name: "July",
+            users: 20,
+          },
+          {
+            name: "August",
+            users: 220,
+          },
+          {
+            name: "September",
+            users: 200,
+          },
+          {
+            name: "October",
+            users: 250,
+          },
+          {
+            name: "November",
+            users: 240,
+          },
+          {
+            name: "December",
+            users: 280,
+          },
+        ]}
+        dimension={{
+          accessor: "name",
+        }}
+        measure={{
+          accessor: "users",
+        }}
+        onClick={function _a() {}}
+        onDataPointClick={function _a() {}}
+        onLegendClick={function _a() {}}
+      />
       <LineChart
         dataset={[
           {
