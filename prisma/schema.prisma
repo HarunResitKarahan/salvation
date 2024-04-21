@@ -61,3 +61,42 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Icon {
+  //Proje ve default kullanici avatar iconlarını barindiran tablo. 
+  //Kullanıcılar manuel icon da ekleyebilirler.
+  //bu iconları ayrı bir folder'da tutup path kısmına sadece dosya adını ekleyeceğiz.
+  //eklenen dosyalar otomatik rename edilecek.
+  id        Int    @id @unique @default(autoincrement())
+  path      String
+  icontype  String
+  cretor    String?
+  isSystem  Int
+
+}
+
+model board {
+  //board ve query
+  id Int  @id @unique @default(autoincrement())
+  query String?
+
+}
+
+model Board_Project {
+  boardid Int @unique
+  projectid  Int
+
+}
+
+model Customfield {
+  //customfield'lar ve tiplerini tuttuğumuz tablo. option ve value için farklı tablo olacak. 
+  id            Int         @id @unique @default(autoincrement())
+  cfname        String      @unique
+  description   String?
+  defaultvalue  String?
+  fieldtype     String
+  cfkey         String      @unique
+
+}
+
+
