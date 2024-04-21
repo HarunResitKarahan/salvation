@@ -1,13 +1,14 @@
 {
   "metadata": {
-    "title": "Project Title",
-    "description": "Description"
+    "title": "Project Salvation",
+    "description": "Tool for Everything"
   },
   "navigation": {
     "home": "Home",
     "about": "About"
   },
   "navbar": {
+    "_comment": "This will not be used in the future.",
     "login": "Login",
     "signUp": "Sign Up",
     "tabs": [
@@ -34,5 +35,352 @@
       "title": "Welcome to NextJs i18n",
       "description": "Internationalization in NextJs 13 App router"
     }
+  },
+
+
+
+
+
+  "topbar": {
+    "_comment": "Istisnai durumlar haric bu topbar her yerde kullaniliyor olacak.",
+    "tabs": [
+      {
+        "value": "Dashboards",
+        "icon": null,
+        "items": [
+          {
+            "cards": [
+              {
+                "title": "",
+                "items":[
+                  {
+                    "value": "Manage Dashboards"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "value": "Projects",
+        "icon": null,
+        "items": [
+          {
+            "cards": [
+              {
+                "title": "CURRENT PROJECT",
+                "items":[
+                ]
+              },
+              {
+                "title": "PROJECTS BY CATEGORY",
+                "items":[
+                ]
+              },
+              {
+                "title": "PROJECTS",
+                "items":[
+                  {
+                    "value": "View All Projects"
+                  },
+                  {
+                    "value": "Create Project"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "value": "Issues",
+        "icon": null,
+        "items": [
+          {
+            "cards": [
+              {
+                "title": "ISSUES",
+                "items":[
+                  {
+                    "value": "Search Issues"
+                  }
+                ]
+              },
+              {
+                "title": "FILTERS",
+                "items":[
+                  {
+                    "value": "Issues assigned to me"
+                  },
+                  {
+                    "value": "Issues created by me"
+                  },
+                  {
+                    "value": "Manage filters"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "value": null,
+        "icon": "Settings icon will be here"
+      },
+      {
+        "value": null,
+        "icon": "Avatar icon will be here"
+      }
+    ],
+    "createButton": [
+      {
+        "value": "Create",
+        "icon": null
+      }
+    ],
+    "searchBox": [
+      {
+        "value": "Search",
+        "icon": "search icon will be here"
+      }
+    ]
+  },
+
+  "configurationsTopSide": {
+    "_comment": "her settings linkinin gideceği sayfada top side of the page burasi olcak",
+    "title": "Configurations",
+    "header": "Configurations",
+    "searchBox": [
+      {
+        "value": "Search",
+        "icon": "search icon will be here"
+      }
+    ],
+    "navigationOptions": [
+      {
+        "value": "Projects"
+      },
+      {
+        "value": "Issues"
+      },
+      {
+        "value": "User Directory"
+      },
+      {
+        "value": "System"
+      }
+    ]
+  },
+
+  "configurationsLeftBarSystem": {
+    "_comment": "system parent'i altinda left bar fixed bu.",
+    "cards": [
+      {
+        "value": "GENERAL",
+        "items": [
+          {
+            "value": "General Configuration"
+          }
+        ]
+      },
+      {
+        "value": "SYSTEM",
+        "items": [
+          {
+            "value": "System information"
+          },
+          {
+            "value": "Database monitoring"
+          },
+          {
+            "value": "Logs"
+          }
+        ]
+      },
+      {
+        "value": "APPLICATION ACCESS",
+        "items": [
+          {
+            "value": "Project Roles"
+          },
+          {
+            "value": "Permissions"
+          },
+          {
+            "value": "Active sessions"
+          },
+          {
+            "value": "External connections"
+          }
+        ]
+      },
+      {
+        "value": "BACKUP AND RESTORE",
+        "items": [
+          {
+            "value": "Backup system"
+          },
+          {
+            "value": "Restore system"
+          }
+        ]
+      },
+      {
+        "value": "ADVANCED",
+        "items": [
+          {
+            "value": "Index"
+          },
+          {
+            "value": "Applicaton Events"
+          },
+          {
+            "value": "Listeners"
+          },
+          {
+            "value": "Services"
+          },
+          {
+            "value": "REST"
+          }
+        ]
+      }
+    ]
+  },
+
+  "configurationsLeftBarUserDirectory": {
+    "_comment": "user directory parent'i altinda left bar fixed bu.",
+    "cards":[
+      {
+        "value": "USER MANAGEMENT",
+        "items": [
+          {
+            "value": "Users"
+          },
+          {
+            "value": "Groups"
+          }
+        ]
+      },
+      {
+        "value": "USER DIRECTORIES",
+        "items": [
+          {
+            "value": "User Directories"
+          }
+        ]
+      }
+    ]
+  },
+
+  "configurationsLeftBarIssues": {
+    "_comment": "issues parent'i altinda left bar fixed bu.",
+    "cards":[
+      {
+        "value": "ISSUE TYPES",
+        "items": [
+          {
+            "value": "Issue types"
+          },
+          {
+            "value": "Issue type patterns"
+          },
+          {
+            "value": "Sub-issue types"
+          }
+        ]
+      },
+      {
+        "value": "WORKFLOWS",
+        "items": [
+          {
+            "value": "Workflows"
+          },
+          {
+            "value": "Workflow schemes"
+          }
+        ]
+      },
+      {
+        "value": "SCREENS",
+        "items": [
+          {
+            "value": "Screens"
+          },
+          {
+            "value": "Screen Schemes"
+          },
+          {
+            "value": "Issue type screen schemes"
+          }
+        ]
+      },
+      {
+        "value": "ATTRIBUTES",
+        "items": [
+          {
+            "value": "Custom fields"
+          },
+          {
+            "value": "Field configurations"
+          },
+          {
+            "value": "Field configuration schemes"
+          },
+          {
+            "value": "Priorities"
+          },
+          {
+            "value": "Priority schemes"
+          },
+          {
+            "value": "Time tracking"
+          },
+          {
+            "value": "Linking issues"
+          },
+          {
+            "value": "Statuses"
+          },
+          {
+            "value": "Resolutions"
+          }
+        ]
+      },
+      {
+        "value": "GENERAL FEATURES",
+        "items": [
+          {
+            "value": "Notification schemes"
+          },
+          {
+            "value": "Permission schemes"
+          }
+        ]
+      }
+    ]
+  },
+
+  "configurationsLeftBarProjects": {
+    "_comment": "projects parent'i altinda left bar fixed bu.",
+    "cards": [
+      {
+        "value": "PROJECTS",
+        "items": [
+          {
+            "value": "Projects"
+          },
+          {
+            "value": "Project categories"
+          },
+          {
+            "value": "Archived projects"
+          }
+        ]
+      }
+    ]
   }
+
 }
