@@ -56,7 +56,7 @@ const authMiddleware = withAuth(
             userRole = req.nextauth.token?.role,
             token = getToken({ req }),
             isAuthenticated = !!token;
-        console.log("isAuthenticated", isAuthenticated)
+            
         if (pathname.includes('/Login') && isAuthenticated) {
             return NextResponse.redirect(new URL('/', req.url));
         }
