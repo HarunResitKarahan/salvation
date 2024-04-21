@@ -4,6 +4,7 @@ import {
   Button,
   Icon,
   Input,
+  List,
   Popover,
   ShellBar,
   ShellBarItem,
@@ -15,6 +16,7 @@ import "@ui5/webcomponents-icons/dist/action-settings.js";
 import "@ui5/webcomponents-icons/dist/nav-back.js";
 import "@ui5/webcomponents-icons/dist/grid.js";
 import { Locale } from "@/app/[lang]/_i18n/i18n.config";
+import SignOutButton from "./SignOutButton";
 
 export default function Navbar({
   lang,
@@ -25,6 +27,7 @@ export default function Navbar({
 }) {
   console.log("Navbar.tsx", session);
   const popoverRef = useRef(null);
+  const popoverProfileRef = useRef(null);
   // @ts-ignore
   const handleShellBarItemClick = (e) => {
     // @ts-ignore
@@ -52,7 +55,10 @@ export default function Navbar({
         onMenuItemClick={function _a() {}}
         onNotificationsClick={function _a() {}}
         onProductSwitchClick={function _a() {}}
-        onProfileClick={function _a() {}}
+        onProfileClick={function _a(e) {
+          // @ts-ignore
+          popoverProfileRef.current.showAt(e.detail.targetRef);
+        }}
         onSearchButtonClick={function _a() {}}
         primaryTitle="Project Salvation"
         profile={
@@ -71,10 +77,23 @@ export default function Navbar({
         // showProductSwitch
       >
         {/* <ShellBarItem icon="log" text="Oturumu Kapat" /> */}
-        <ShellBarItem onClick={handleShellBarItemClick} icon="action-settings" text="Ayarlar" />
-        <ShellBarItem onClick={handleShellBarItemClick} icon="grid" text="Uygulamalar" />
+        <ShellBarItem
+          onClick={handleShellBarItemClick}
+          icon="action-settings"
+          text="Ayarlar"
+        />
+        <ShellBarItem
+          onClick={handleShellBarItemClick}
+          icon="grid"
+          text="Uygulamalar"
+        />
       </ShellBar>
-      <Popover ref={popoverRef} placementType="Bottom">Hello there!</Popover>
+      <Popover ref={popoverRef} placementType="Bottom">
+        Hello there!
+      </Popover>
+      <Popover ref={popoverProfileRef} initialFocus="" placementType="Bottom">
+        <SignOutButton></SignOutButton>
+      </Popover>
     </>
   );
 }

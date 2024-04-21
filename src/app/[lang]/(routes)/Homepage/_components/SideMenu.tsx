@@ -5,6 +5,7 @@ import {
   SideNavigationItem,
   SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
+import "@ui5/webcomponents-icons/dist/database.js";
 
 export default function SideMenu() {
   return (
@@ -24,7 +25,7 @@ export default function SideMenu() {
         }
         onSelectionChange={function _a() {}}
       >
-        <SideNavigationItem icon="home" text="Home" />
+        <SideNavigationItem icon="database" text="Dashboard" />
         <SideNavigationItem expanded icon="group" text="People">
           <SideNavigationSubItem text="From My Team" />
           <SideNavigationSubItem text="From Other Teams" />
