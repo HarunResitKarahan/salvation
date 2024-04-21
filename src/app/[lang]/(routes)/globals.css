@@ -27,8 +27,8 @@ input:focus {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(233, 235, 240);
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
 }
 * {
   box-sizing: border-box;

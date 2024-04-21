@@ -14,8 +14,8 @@ export default async function Home({
   // console.log("page.tsx- dbUser", dbUser)
   return (
     <>
-        <Navbar></Navbar>
-        <Homepage lang={lang} session={session} />
+      <Navbar lang={lang} session={session} />
+      <Homepage lang={lang} session={session} />
     </>
   );
 }

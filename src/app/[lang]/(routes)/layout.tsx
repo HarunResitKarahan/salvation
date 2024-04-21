@@ -46,10 +46,10 @@ export default function RootLayout({
   params: { lang: Locale, session: Session };
 }>) {
   return (
-    <html lang={params.lang}>
+    <html style={{height: '100%', minHeight: '100%'}} lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-            <main className='h-dvh h-full'>
+            <main className='h-full h-dvh'>
               {children}
             </main>
         </AuthProvider>

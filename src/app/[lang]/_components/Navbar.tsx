@@ -8,25 +8,34 @@ import {
   StandardListItem,
 } from "@ui5/webcomponents-react";
 import React from "react";
+import "@ui5/webcomponents-icons/dist/log.js";
+import { Locale } from "@/app/[lang]/_i18n/i18n.config";
 
-export default function Navbar() {
+export default function Navbar({
+  lang,
+  session,
+}: {
+  lang: Locale;
+  session: any;
+}) {
+  console.log("Navbar.tsx", session)
   return (
     <ShellBar
       className="mb-2"
       logo={
         <img
           alt="SAP Logo"
-          src="https://sap.github.io/ui5-webcomponents/images/sap-logo-svg.svg"
+          src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
         />
       }
       menuItems={
         <>
-          <StandardListItem data-key="1">Menu Item 1</StandardListItem>
+          {/* <StandardListItem data-key="1">Menu Item 1</StandardListItem>
           <StandardListItem data-key="2">Menu Item 2</StandardListItem>
-          <StandardListItem data-key="3">Menu Item 3</StandardListItem>
+          <StandardListItem data-key="3">Menu Item 3</StandardListItem> */}
         </>
       }
-      notificationsCount="10"
+      notificationsCount="2"
       onCoPilotClick={function _a() {}}
       onLogoClick={function _a() {}}
       onMenuItemClick={function _a() {}}
@@ -34,10 +43,10 @@ export default function Navbar() {
       onProductSwitchClick={function _a() {}}
       onProfileClick={function _a() {}}
       onSearchButtonClick={function _a() {}}
-      primaryTitle="Shell Bar"
+      primaryTitle="Project Salvation"
       profile={
         <Avatar>
-          <img src="https://sap.github.io/ui5-webcomponents-react/assets/Person-B7wHqdJw.png" />
+          <img src={session.user.image} />
         </Avatar>
       }
       searchField={
@@ -48,7 +57,7 @@ export default function Navbar() {
       showNotifications
       showProductSwitch
     >
-      <ShellBarItem count="3" icon="add" text="ShellBarItem" />
+      <ShellBarItem icon="log" text="Oturumu Kapat" />
     </ShellBar>
   );
 }

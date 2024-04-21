@@ -24,6 +24,8 @@
     "@ui5/webcomponents-icons-business-suite": "^1.24.0",
     "@ui5/webcomponents-icons-tnt": "^1.24.0",
     "@ui5/webcomponents-react": "^1.28.0",
+    "@ui5/webcomponents-react-base": "^1.27.0",
+    "@ui5/webcomponents-react-charts": "^1.27.0",
     "crypto-js": "^4.2.0",
     "framer-motion": "^11.0.15",
     "jose": "^5.2.3",
