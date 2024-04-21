@@ -49,17 +49,17 @@ export default function Homepage({
   // }, []);
   return (
     <>
-      <div className="flex w-full h-full pt-2">
+      <div className="flex w-full h-full pt-2 overflow-hidden">
         <div className="mr-2">
-        <SideMenu></SideMenu>
+          <SideMenu></SideMenu>
         </div>
         <div
-        className="w-full rounded"
+          className="w-full rounded overflow-scroll"
           style={{
             backgroundColor: "#fff",
           }}
         >
-          <div className="container md:mx-auto p-6 overflow-scroll">
+          <div className="container md:mx-auto p-6">
             <HomePageContext></HomePageContext>
           </div>
         </div>
