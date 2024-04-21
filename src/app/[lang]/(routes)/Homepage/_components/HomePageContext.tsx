@@ -155,28 +155,19 @@ export default function HomePageContext() {
         dimensions={[
           {
             accessor: "name",
-            formatter: function _a() {},
-            interval: 0,
           },
         ]}
         measures={[
           {
             accessor: "users",
-            formatter: function _a() {},
-            label: "Users",
-            lineConfig: {
-              type: "linear",
-            },
+            formatter: function _a(e) { return e},
+            label: "number of users",
           },
           {
             accessor: "sessions",
-            formatter: function _a() {},
-            hideDataLabel: true,
-            label: "Active Sessions",
           },
           {
             accessor: "volume",
-            label: "Vol.",
           },
         ]}
         onClick={function _a() {}}
