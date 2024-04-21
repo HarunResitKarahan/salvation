@@ -21,7 +21,6 @@ export default function Navbar({
   console.log("Navbar.tsx", session)
   return (
     <ShellBar
-      className="mb-2"
       logo={
         <img
           alt="SAP Logo"

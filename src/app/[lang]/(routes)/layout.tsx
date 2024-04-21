@@ -8,7 +8,7 @@ import { Session } from 'next-auth';
 import { ThemeProvider } from '@ui5/webcomponents-react';
 
 const inter = Inter({ subsets: ["latin"] });
-inter.className = `${inter.className} min-h-screen`
+inter.className = `${inter.className} h-full`
 type Props = {
   params: { lang: Locale, session: Session },
 }
@@ -46,10 +46,10 @@ export default function RootLayout({
   params: { lang: Locale, session: Session };
 }>) {
   return (
-    <html style={{height: '100%', minHeight: '100%'}} lang={params.lang}>
+    <html className='h-dvh' lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-            <main className='h-full h-dvh'>
+            <main className='h-dvh flex justify-stretch flex-col items-center'>
               {children}
             </main>
         </AuthProvider>
