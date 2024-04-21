@@ -59,7 +59,7 @@ export default function Homepage({
             backgroundColor: "#fff",
           }}
         >
-          <div className="container md:mx-auto p-6">
+          <div className="container md:mx-auto p-6 overflow-scroll">
             <HomePageContext></HomePageContext>
           </div>
         </div>
