@@ -98,5 +98,3 @@ model Customfield {
   cfkey         String      @unique
 
 }
-
-
