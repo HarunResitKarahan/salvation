@@ -6,12 +6,18 @@ import {
   SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/database.js";
+import "@ui5/webcomponents-icons/dist/group.js";
+import "@ui5/webcomponents-icons/dist/locate-me.js";
+import "@ui5/webcomponents-icons/dist/calendar.js";
+import "@ui5/webcomponents-icons/dist/chain-link.js";
+import "@ui5/webcomponents-icons/dist/history.js";
 
 export default function SideMenu() {
   return (
     <>
       <SideNavigation
-        className="w-full p-3"
+        className="p-3"
+        collapsed={false}
         fixedItems={
           <>
             <SideNavigationItem
@@ -26,7 +32,7 @@ export default function SideMenu() {
         onSelectionChange={function _a() {}}
       >
         <SideNavigationItem icon="database" text="Dashboard" />
-        <SideNavigationItem expanded icon="group" text="People">
+        <SideNavigationItem expanded  icon="group" text="People">
           <SideNavigationSubItem text="From My Team" />
           <SideNavigationSubItem text="From Other Teams" />
         </SideNavigationItem>

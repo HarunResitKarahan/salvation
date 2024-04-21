@@ -56,6 +56,7 @@ export default function Navbar({
         onNotificationsClick={function _a() {}}
         onProductSwitchClick={function _a() {}}
         onProfileClick={function _a(e) {
+          console.log(popoverProfileRef)
           // @ts-ignore
           popoverProfileRef.current.showAt(e.detail.targetRef);
         }}
