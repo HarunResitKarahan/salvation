@@ -13,6 +13,7 @@ type Props = {
   params: { lang: Locale, session: Session },
 }
 
+
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
@@ -48,7 +49,7 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-            <main className='min-h-screen'>
+            <main className='h-dvh h-full'>
               {children}
             </main>
         </AuthProvider>

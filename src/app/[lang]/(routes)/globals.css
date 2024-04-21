@@ -15,9 +15,6 @@ input {
 input:focus {
   box-shadow: none !important;
 }
-body > main > div > ui5-flexible-column-layout::shadow div.ui5-fcl-column.ui5-fcl-column-animation.ui5-fcl-column--start {
-  max-width: fit-content !important;
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,6 +27,11 @@ body > main > div > ui5-flexible-column-layout::shadow div.ui5-fcl-column.ui5-fc
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(233, 235, 240);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+* {
+  box-sizing: border-box;
 }
 
 @layer utilities {

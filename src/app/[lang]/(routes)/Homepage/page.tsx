@@ -39,9 +39,9 @@ export default function Homepage({
   }, []);
   return (
     <>
-      <FlexBox direction="Row">
+      <FlexBox className="h-full" direction="Row">
         <FlexibleColumnLayout
-          className="w-full min-h-screen"
+          className="w-full h-full"
           layout="TwoColumnsMidExpanded"
           hideArrows={true}
           onLayoutChange={function _a() {}}
