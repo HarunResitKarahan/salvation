@@ -4,14 +4,17 @@ import { Locale, i18n } from "@/app/[lang]/_i18n/i18n.config";
 import "./globals.css";
 import { getDictionary } from "../_libs/dictionary";
 import AuthProvider from "../_context/AuthProvider";
-import { Session } from "next-auth";
+import { Session, getServerSession } from "next-auth";
 import { ThemeProvider } from "@ui5/webcomponents-react";
+import Navbar from "../_components/Navbar";
+import { options } from "@/app/api/auth/[...nextauth]/options";
 
 const inter = Inter({ subsets: ["latin"] });
 inter.className = `${inter.className} h-full`;
 type Props = {
   params: { lang: Locale; session: Session };
 };
+
 
 export async function generateMetadata(
   { params }: Props,
@@ -33,20 +36,19 @@ export async function generateMetadata(
 
 export default function RootLayout({
   children,
-  session,
   params,
 }: Readonly<{
   children: React.ReactNode;
   session: Session;
-  params: { lang: Locale; session: Session };
+  params: { lang: Locale };
 }>) {
   return (
     <html className="h-dvh" lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-            <main className="h-dvh flex justify-stretch flex-col items-center">
-              {children}
-            </main>
+          <main className="h-dvh flex justify-stretch flex-col items-center">
+            {children}
+          </main>
         </AuthProvider>
       </body>
     </html>
