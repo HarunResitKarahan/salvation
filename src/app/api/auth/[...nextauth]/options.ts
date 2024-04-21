@@ -71,13 +71,13 @@ export const options: NextAuthOptions = {
     callbacks: {
         async jwt({ token, account, session, trigger }) {
             // Persist the OAuth access_token to the token right after signin
-            console.log("****************JWT CALLBACK******************")
-            console.log("*********ACCOUNT*********")
-            console.log(account)
-            console.log("*********TOKEN*********")
-            console.log(token)
-            console.log("*********session*********")
-            console.log(session)
+            // console.log("****************JWT CALLBACK******************")
+            // console.log("*********ACCOUNT*********")
+            // console.log(account)
+            // console.log("*********TOKEN*********")
+            // console.log(token)
+            // console.log("*********session*********")
+            // console.log(session)
             if (trigger === "update" && session?.name) {
                 token.name = session.name
             }
@@ -86,8 +86,8 @@ export const options: NextAuthOptions = {
         async session({ session, token, user }) { // token is undefined
             // Send properties to the client, like an access_token from a provider.
             // session.access_token = token.accesstoken
-            console.log("****************SESSION CALLBACK******************")
-            console.log(session)
+            // console.log("****************SESSION CALLBACK******************")
+            // console.log(session)
             return session
         },
         // async redirect({ url, baseUrl }: { url: string, baseUrl: string }) {

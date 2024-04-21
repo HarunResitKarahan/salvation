@@ -10,6 +10,7 @@ import { i18n } from '@/app/[lang]/_i18n/i18n.config'
 
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
+import { getToken } from "next-auth/jwt";
 
 function getLocale(request: NextRequest): string | undefined {
     const negotiatorHeaders: Record<string, string> = {}
@@ -52,7 +53,13 @@ const authMiddleware = withAuth(
     function onSuccess(req) {
 
         const pathname = req.nextUrl.pathname,
-            userRole = req.nextauth.token?.role;
+            userRole = req.nextauth.token?.role,
+            token = getToken({ req }),
+            isAuthenticated = !!token;
+        console.log("isAuthenticated", isAuthenticated)
+        if (pathname.includes('/Login') && isAuthenticated) {
+            return NextResponse.redirect(new URL('/', req.url));
+        }
         // console.log(pathname.includes('/Login'), userRole)
         // if (pathname.includes('/Login') && userRole !== 'admin') {
         //     console.log(pathname.includes('/Login'), userRole)
@@ -67,7 +74,7 @@ const authMiddleware = withAuth(
     },
     {
         callbacks: {
-            authorized: ({ token }) => token != null
+            authorized: ({ token }) => !!token 
         },
         pages: {
             signIn: `/tr/Login`,
@@ -84,5 +91,5 @@ export default function middleware(req: NextRequest) {
 
 export const config = {
     // Matcher ignoring `/_next/` and `/api/`
-    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)', '/']
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)',]
 }
