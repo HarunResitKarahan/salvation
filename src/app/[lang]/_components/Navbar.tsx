@@ -17,6 +17,8 @@ import "@ui5/webcomponents-icons/dist/nav-back.js";
 import "@ui5/webcomponents-icons/dist/grid.js";
 import { Locale } from "@/app/[lang]/_i18n/i18n.config";
 import SignOutButton from "./SignOutButton";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({
   lang,
@@ -28,20 +30,21 @@ export default function Navbar({
   console.log("Navbar.tsx", session);
   const popoverRef = useRef(null);
   const popoverProfileRef = useRef(null);
+  const router = useRouter()
   // @ts-ignore
-  const handleShellBarItemClick = (e) => {
+  const handleShellBarSettingsClick = (e) => {
     // @ts-ignore
-    popoverRef.current.showAt(e.detail.targetRef);
+    router.push('/Configurations')
   };
   return (
     <>
       <ShellBar
-        // logo={
-        //   <img
-        //     alt="SAP Logo"
-        //     src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
-        //   />
-        // }
+        logo={
+          <img
+            alt="SAP Logo"
+            src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
+          />
+        }
         menuItems={
           <>
             {/* <StandardListItem data-key="1">Menu Item 1</StandardListItem>
@@ -51,7 +54,7 @@ export default function Navbar({
         }
         notificationsCount="2"
         onCoPilotClick={function _a() {}}
-        onLogoClick={function _a() {}}
+        onLogoClick={function _a() {router.push('/')}}
         onMenuItemClick={function _a() {}}
         onNotificationsClick={function _a() {}}
         onProductSwitchClick={function _a() {}}
@@ -72,18 +75,17 @@ export default function Navbar({
         // startButton={
         //   <Button icon="nav-back"></Button>
         // }
-        secondaryTitle="Fiori 3 Shell Bar"
+        // secondaryTitle="Fiori 3 Shell Bar"
         showNotifications
         // showProductSwitch
       >
         {/* <ShellBarItem icon="log" text="Oturumu Kapat" /> */}
         <ShellBarItem
-          onClick={handleShellBarItemClick}
+          onClick={handleShellBarSettingsClick}
           icon="action-settings"
           text="Ayarlar"
         />
         <ShellBarItem
-          onClick={handleShellBarItemClick}
           icon="grid"
           text="Uygulamalar"
         />
