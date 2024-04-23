@@ -68,14 +68,22 @@ export default function Navbar({
             // @ts-ignore
             popoverElement.close();
           } else {
-             // @ts-ignore
+            // @ts-ignore
             popoverElement.showAt(e.detail.targetRef);
           }
         }}
         onProductSwitchClick={function _a() {}}
         onProfileClick={function _a(e) {
           // @ts-ignore
-          popoverProfileRef.current.showAt(e.detail.targetRef);
+          const popoverElement = popoverProfileRef.current;
+          // @ts-ignore
+          if (popoverElement.isOpen()) {
+            // @ts-ignore
+            popoverElement.close();
+          } else {
+            // @ts-ignore
+            popoverElement.showAt(e.detail.targetRef);
+          }
         }}
         onSearchButtonClick={function _a() {}}
         primaryTitle="Project Salvation"
