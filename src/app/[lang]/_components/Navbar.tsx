@@ -10,7 +10,7 @@ import {
   ShellBarItem,
   StandardListItem,
 } from "@ui5/webcomponents-react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "@ui5/webcomponents-icons/dist/log.js";
 import "@ui5/webcomponents-icons/dist/action-settings.js";
 import "@ui5/webcomponents-icons/dist/nav-back.js";
@@ -32,6 +32,7 @@ export default function Navbar({
   const popoverRef = useRef(null);
   const popoverProfileRef = useRef(null);
   const popoverNotificationRef = useRef(null);
+  const [ispopoverNotification, setIspopoverNotification] = useState(false);
   const router = useRouter();
   // @ts-ignore
   const handleShellBarSettingsClick = (e) => {
@@ -61,8 +62,15 @@ export default function Navbar({
         }}
         onMenuItemClick={function _a() {}}
         onNotificationsClick={function _a(e) {
+          const popoverElement = popoverNotificationRef.current;
           // @ts-ignore
-          popoverNotificationRef.current.showAt(e.detail.targetRef);
+          if (popoverElement.isOpen()) {
+            // @ts-ignore
+            popoverElement.close();
+          } else {
+             // @ts-ignore
+            popoverElement.showAt(e.detail.targetRef);
+          }
         }}
         onProductSwitchClick={function _a() {}}
         onProfileClick={function _a(e) {

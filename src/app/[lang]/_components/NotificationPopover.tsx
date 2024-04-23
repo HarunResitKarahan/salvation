@@ -14,7 +14,11 @@ export default function NotificationPopover({
   popoverRef: any;
 }) {
   return (
-    <Popover className="sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12" ref={popoverRef} placementType="Bottom">
+    <Popover
+      className="sm:w-8/12 md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12"
+      ref={popoverRef}
+      placementType="Bottom"
+    >
       <NotificationListGroupItem
         actions={
           <>
