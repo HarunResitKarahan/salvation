@@ -4,6 +4,7 @@ import { getDictionary } from "@/app/[lang]/_libs/dictionary";
 import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import Navbar from "../../_components/Navbar";
+import Main from "./_components/Main";
 
 export default async function Configurations({
   params: { lang },
@@ -16,7 +17,7 @@ export default async function Configurations({
   return (
     <>
       <Navbar lang={lang} session={session} />
-      <p>Configuration- deneme git</p>
+      <Main></Main>
     </>
   );
 }
