@@ -16,8 +16,8 @@ import {
   Link,
 } from "@ui5/webcomponents-react";
 import React, { useRef, useState } from "react";
-import "@ui5/webcomponents-icons/dist/slim-arrow-left.js";
-// import "@ui5/webcomponents-icons/dist/slim-arrow-right.js";
+// import "@ui5/webcomponents-icons/dist/slim-arrow-left.js";
+import "@ui5/webcomponents-icons/dist/AllIcons.js";
 
 export default function ViewMessage() {
   const ref = useRef(null);
@@ -32,8 +32,9 @@ export default function ViewMessage() {
   return (
     <>
       <MessageViewButton
+      className="absolute right-5 bottom-5"
         counter={3}
-        type={ValueState.Error}
+        type="Information"
         onClick={(e) => {
           ref.current.showAt(e.target);
         }}
