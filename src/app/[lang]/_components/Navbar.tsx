@@ -19,6 +19,7 @@ import { Locale } from "@/app/[lang]/_i18n/i18n.config";
 import SignOutButton from "./SignOutButton";
 import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
+import NotificationPopover from "./NotificationPopover";
 
 export default function Navbar({
   lang,
@@ -30,11 +31,12 @@ export default function Navbar({
   console.log("Navbar.tsx", session);
   const popoverRef = useRef(null);
   const popoverProfileRef = useRef(null);
-  const router = useRouter()
+  const popoverNotificationRef = useRef(null);
+  const router = useRouter();
   // @ts-ignore
   const handleShellBarSettingsClick = (e) => {
     // @ts-ignore
-    router.push('/Configurations')
+    router.push("/Configurations");
   };
   return (
     <>
@@ -54,9 +56,14 @@ export default function Navbar({
         }
         notificationsCount="2"
         onCoPilotClick={function _a() {}}
-        onLogoClick={function _a() {router.push('/')}}
+        onLogoClick={function _a() {
+          router.push("/");
+        }}
         onMenuItemClick={function _a() {}}
-        onNotificationsClick={function _a() {}}
+        onNotificationsClick={function _a(e) {
+          // @ts-ignore
+          popoverNotificationRef.current.showAt(e.detail.targetRef);
+        }}
         onProductSwitchClick={function _a() {}}
         onProfileClick={function _a(e) {
           // @ts-ignore
@@ -85,15 +92,15 @@ export default function Navbar({
           icon="action-settings"
           text="Ayarlar"
         />
-        <ShellBarItem
-          icon="grid"
-          text="Uygulamalar"
-        />
+        <ShellBarItem icon="grid" text="Uygulamalar" />
       </ShellBar>
       <Popover ref={popoverRef} placementType="Bottom">
         Hello there!
       </Popover>
-      <Popover ref={popoverProfileRef} initialFocus="" placementType="Bottom">
+      <NotificationPopover
+        popoverRef={popoverNotificationRef}
+      ></NotificationPopover>
+      <Popover ref={popoverProfileRef} placementType="Bottom">
         <SignOutButton></SignOutButton>
       </Popover>
     </>
