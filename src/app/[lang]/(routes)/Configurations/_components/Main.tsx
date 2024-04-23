@@ -4,9 +4,11 @@ import {
   Breadcrumbs,
   BreadcrumbsItem,
   Button,
+  FlexBox,
   FlexibleColumnLayout,
   GroupHeaderListItem,
   List,
+  ObjectStatus,
   StandardListItem,
   Tab,
   TabContainer,
@@ -15,10 +17,20 @@ import {
 } from "@ui5/webcomponents-react";
 import React from "react";
 import SideMenu from "../../Homepage/_components/SideMenu";
+
 import "@ui5/webcomponents-icons-business-suite/dist/sub-project.js";
+import "@ui5/webcomponents-icons-business-suite/dist/input.js";
+import "@ui5/webcomponents-icons-business-suite/dist/operator.js";
 import "@ui5/webcomponents-icons-tnt/dist/package-diagram.js";
+
 import "@ui5/webcomponents-icons/dist/message-warning.js";
 import "@ui5/webcomponents-icons/dist/it-system.js";
+import "@ui5/webcomponents-icons/dist/settings.js";
+import "@ui5/webcomponents-icons/dist/display-more.js";
+import "@ui5/webcomponents-icons/dist/information.js";
+import "@ui5/webcomponents-icons/dist/role.js";
+import "@ui5/webcomponents-icons/dist/permission.js";
+import "@ui5/webcomponents-icons/dist/key.js";
 
 export default function Main() {
   return (
@@ -45,39 +57,54 @@ export default function Main() {
           icon="business-suite/sub-project"
           className="pb-2"
         >
-          <FlexibleColumnLayout
-            layout="TwoColumnsMidExpanded"
-            midColumn={
-              <List headerText="Mid Column List">
-                <StandardListItem>List Item 1</StandardListItem>
-                <StandardListItem>List Item 2</StandardListItem>
-                <StandardListItem>List Item 3</StandardListItem>
-              </List>
-            }
-            onLayoutChange={function _a() {}}
-            startColumn={
-              <List
-                // className="w-48"
-                growing="None"
-                mode="None"
-                onItemClick={function _a() {}}
-                onItemClose={function _a() {}}
-                onItemDelete={function _a() {}}
-                onItemToggle={function _a() {}}
-                onLoadMore={function _a() {}}
-                onSelectionChange={function _a() {}}
-                separators="All"
-              >
-                <GroupHeaderListItem>
-                  General Configurations
-                </GroupHeaderListItem>
-                <StandardListItem>List Item</StandardListItem>
-                <StandardListItem>List Item</StandardListItem>
-                <GroupHeaderListItem>GroupHeaderListItem 2</GroupHeaderListItem>
-                <StandardListItem>List Item</StandardListItem>
-              </List>
-            }
-          />
+          <FlexBox className="h-full rounded">
+            <List
+              className="w-fit h-full min-w-fit mr-2 shadow bg-white rounded"
+              growing="None"
+              mode="None"
+              // headerText=" "
+              onItemClick={function _a() {}}
+              onItemClose={function _a() {}}
+              onItemDelete={function _a() {}}
+              onItemToggle={function _a() {}}
+              onLoadMore={function _a() {}}
+              onSelectionChange={function _a() {}}
+              separators="All"
+            >
+              <GroupHeaderListItem>General Configurations</GroupHeaderListItem>
+              <StandardListItem navigated selected icon="display-more">
+                Find more admin tools
+              </StandardListItem>
+              <GroupHeaderListItem>System Support</GroupHeaderListItem>
+
+              <StandardListItem icon="information">
+                System Info
+              </StandardListItem>
+              <StandardListItem icon="business-suite/input">
+                Instrumentation
+              </StandardListItem>
+
+              <GroupHeaderListItem>Security</GroupHeaderListItem>
+              <StandardListItem icon="role">Project Roles</StandardListItem>
+              <StandardListItem icon="permission">
+                Global Permission
+              </StandardListItem>
+              <StandardListItem icon="key">Password Policy</StandardListItem>
+            </List>
+            <FlexBox className="w-full shadow bg-white rounded">
+              <FlexBox className="container md:mx-auto p-6">
+                <Breadcrumbs
+                  className="my-3"
+                  design="NoCurrentPage"
+                  onItemClick={function _a() {}}
+                  separatorStyle="BackSlash"
+                >
+                  <BreadcrumbsItem>General Configurations</BreadcrumbsItem>
+                  <BreadcrumbsItem>Find more admin tools</BreadcrumbsItem>
+                </Breadcrumbs>
+              </FlexBox>
+            </FlexBox>
+          </FlexBox>
         </Tab>
         <Tab text="Issues" icon="message-warning" />
         <Tab text="User Directory" icon="tnt/package-diagram" />
