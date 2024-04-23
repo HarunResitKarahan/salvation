@@ -36,14 +36,17 @@ body {
   --radix-scroll-area-thumb-width: 6px;
 }
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
-} */
+}
+
+.homepageContent::-webkit-scrollbar {
+  display: block;
+}
 
 .homepageContent {
   overflow-x: hidden;
 }
-
 
 .homepageContent::-webkit-scrollbar {
   width: 5px;

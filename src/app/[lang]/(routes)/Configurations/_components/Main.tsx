@@ -4,6 +4,10 @@ import {
   Breadcrumbs,
   BreadcrumbsItem,
   Button,
+  FlexibleColumnLayout,
+  GroupHeaderListItem,
+  List,
+  StandardListItem,
   Tab,
   TabContainer,
   TabSeparator,
@@ -18,7 +22,7 @@ import "@ui5/webcomponents-icons/dist/it-system.js";
 
 export default function Main() {
   return (
-    <div className="w-full mt-2">
+    <div className="w-full h-full mt-2">
       {/* <Breadcrumbs
         className="my-3"
         design="Standard"
@@ -29,6 +33,7 @@ export default function Main() {
         <BreadcrumbsItem>Configurations</BreadcrumbsItem>
       </Breadcrumbs> */}
       <TabContainer
+        className="h-full"
         contentBackgroundDesign="Solid"
         headerBackgroundDesign="Solid"
         onTabSelect={function _a() {}}
@@ -40,7 +45,39 @@ export default function Main() {
           icon="business-suite/sub-project"
           className="pb-2"
         >
-          <SideMenu></SideMenu>
+          <FlexibleColumnLayout
+            layout="TwoColumnsMidExpanded"
+            midColumn={
+              <List headerText="Mid Column List">
+                <StandardListItem>List Item 1</StandardListItem>
+                <StandardListItem>List Item 2</StandardListItem>
+                <StandardListItem>List Item 3</StandardListItem>
+              </List>
+            }
+            onLayoutChange={function _a() {}}
+            startColumn={
+              <List
+                // className="w-48"
+                growing="None"
+                mode="None"
+                onItemClick={function _a() {}}
+                onItemClose={function _a() {}}
+                onItemDelete={function _a() {}}
+                onItemToggle={function _a() {}}
+                onLoadMore={function _a() {}}
+                onSelectionChange={function _a() {}}
+                separators="All"
+              >
+                <GroupHeaderListItem>
+                  General Configurations
+                </GroupHeaderListItem>
+                <StandardListItem>List Item</StandardListItem>
+                <StandardListItem>List Item</StandardListItem>
+                <GroupHeaderListItem>GroupHeaderListItem 2</GroupHeaderListItem>
+                <StandardListItem>List Item</StandardListItem>
+              </List>
+            }
+          />
         </Tab>
         <Tab text="Issues" icon="message-warning" />
         <Tab text="User Directory" icon="tnt/package-diagram" />
