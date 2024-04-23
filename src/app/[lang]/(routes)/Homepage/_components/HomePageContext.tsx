@@ -21,6 +21,7 @@ import {
   ScatterChart,
 } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/customize.js";
+import ViewMessage from "@/app/[lang]/_components/ViewMessage";
 
 export default function HomePageContext() {
   return (
@@ -33,6 +34,7 @@ export default function HomePageContext() {
       >
         {/* <span>Center Content</span> */}
       </Bar>
+      <ViewMessage></ViewMessage>
       <Breadcrumbs
         className="my-3"
         design="Standard"
