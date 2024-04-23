@@ -16,8 +16,8 @@ export default function SideMenu() {
   return (
     <>
       <SideNavigation
-        className="p-3"
-        collapsed={false}
+        className="max-sm:hidden p-3"
+        collapsed={true}
         fixedItems={
           <>
             <SideNavigationItem
