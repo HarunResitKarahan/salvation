@@ -15,7 +15,6 @@ type Props = {
   params: { lang: Locale; session: Session };
 };
 
-
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
@@ -46,9 +45,11 @@ export default function RootLayout({
     <html className="h-dvh" lang={params.lang}>
       <body className={inter.className}>
         <AuthProvider>
-          <main className="h-dvh flex justify-stretch flex-col items-center">
-            {children}
-          </main>
+          <ThemeProvider>
+            <main className="h-dvh flex justify-stretch flex-col items-center">
+              {children}
+            </main>
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

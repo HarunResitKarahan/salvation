@@ -31,12 +31,12 @@ export default function SideMenu() {
         }
         onSelectionChange={function _a() {}}
       >
-        <SideNavigationItem icon="database" text="Dashboard" />
+        <SideNavigationItem selected icon="database" text="Dashboard" />
         <SideNavigationItem expanded  icon="group" text="People" wholeItemToggleable={true}>
           <SideNavigationSubItem text="From My Team" />
           <SideNavigationSubItem text="From Other Teams" />
         </SideNavigationItem>
-        <SideNavigationItem icon="locate-me" selected text="Locations" />
+        <SideNavigationItem icon="locate-me" text="Locations" />
         <SideNavigationItem icon="calendar" text="Events">
           <SideNavigationSubItem text="Local" />
           <SideNavigationSubItem text="Others" />
