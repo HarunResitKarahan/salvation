@@ -10,7 +10,7 @@ import {
   ShellBarItem,
   StandardListItem,
 } from "@ui5/webcomponents-react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "@ui5/webcomponents-icons/dist/log.js";
 import "@ui5/webcomponents-icons/dist/action-settings.js";
 import "@ui5/webcomponents-icons/dist/nav-back.js";
@@ -20,7 +20,6 @@ import SignOutButton from "./SignOutButton";
 import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import NotificationPopover from "./NotificationPopover";
-
 export default function Navbar({
   lang,
   session,
@@ -39,6 +38,7 @@ export default function Navbar({
     // @ts-ignore
     router.push("/Configurations");
   };
+
   return (
     <>
       <ShellBar

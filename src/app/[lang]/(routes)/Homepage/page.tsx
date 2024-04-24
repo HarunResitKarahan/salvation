@@ -6,8 +6,13 @@ import LocaleSwitcher from "../../_components/locale-switcher";
 import "@ui5/webcomponents-icons/dist/product.js";
 import { signOut } from "next-auth/react";
 import SideMenu from "./_components/SideMenu";
-import { Grid } from "@ui5/webcomponents-react";
-import HomePageContext from "./_components/HomePageContext";
+import { FlexBox, Grid } from "@ui5/webcomponents-react";
+import Dashboard from "./_components/Dashboard";
+import "@ui5/webcomponents/dist/Assets.js";
+import "@ui5/webcomponents-fiori/dist/Assets.js";
+import { getTheme, setTheme } from "@ui5/webcomponents-base/dist/config/Theme.js";
+import { white } from "tailwindcss/colors";
+
 
 export default function Homepage({
   lang,
@@ -16,6 +21,9 @@ export default function Homepage({
   lang: Locale;
   session: any;
 }) {
+  useEffect(() => {
+    setTheme("sap_horizon_dark")
+  }, [])
   return (
     <>
       <div className="flex w-full h-full pt-2 overflow-hidden">
@@ -24,12 +32,10 @@ export default function Homepage({
         </div>
         <div
           className="homepageContent w-full rounded overflow-scroll"
-          style={{
-            backgroundColor: "#fff",
-          }}
+          style={{backgroundColor: white}}
         >
           <div className="container md:mx-auto p-6">
-            <HomePageContext></HomePageContext>
+            <Dashboard />
           </div>
         </div>
       </div>
