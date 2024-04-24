@@ -2,7 +2,15 @@ import Homepage from "./Homepage/page";
 import { Locale, i18n } from "@/app/[lang]/_i18n/i18n.config";
 import { options } from "../../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
-import Navbar from "../_components/Navbar";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(
+  () => import("../_components/Navbar"),
+  {
+    loading: () => (
+      <p>loading...</p>
+    ),
+  }
+);
 export default async function Home({
   params: { lang },
 }: {

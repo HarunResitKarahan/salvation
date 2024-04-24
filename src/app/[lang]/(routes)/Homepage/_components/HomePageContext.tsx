@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   AnalyticalCardHeader,
   Bar,
@@ -18,10 +18,31 @@ import {
 import {
   LineChart,
   PieChart,
+  PieChartPlaceholder,
   ScatterChart,
 } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/customize.js";
 import ViewMessage from "@/app/[lang]/_components/ViewMessage";
+import dynamic from "next/dynamic";
+const HomepagePieChart = dynamic(
+  () => import("./HomepageCharts/HomepagePieChart"),
+  {
+    loading: () => (
+      <PieChart
+        dataset={[]}
+        dimension={{
+          accessor: "name",
+        }}
+        measure={{
+          accessor: "users",
+        }}
+        onClick={function _a() {}}
+        onDataPointClick={function _a() {}}
+        onLegendClick={function _a() {}}
+      />
+    ),
+  }
+);
 
 export default function HomePageContext() {
   return (
@@ -252,67 +273,7 @@ export default function HomePageContext() {
               </AnalyticalCardHeader>
             }
           >
-            <PieChart
-              dataset={[
-                {
-                  name: "January",
-                  users: 100,
-                },
-                {
-                  name: "February",
-                  users: 230,
-                },
-                {
-                  name: "March",
-                  users: 240,
-                },
-                {
-                  name: "April",
-                  users: 280,
-                },
-                {
-                  name: "May",
-                  users: 100,
-                },
-                {
-                  name: "June",
-                  users: 230,
-                },
-                {
-                  name: "July",
-                  users: 20,
-                },
-                {
-                  name: "August",
-                  users: 220,
-                },
-                {
-                  name: "September",
-                  users: 200,
-                },
-                {
-                  name: "October",
-                  users: 250,
-                },
-                {
-                  name: "November",
-                  users: 240,
-                },
-                {
-                  name: "December",
-                  users: 280,
-                },
-              ]}
-              dimension={{
-                accessor: "name",
-              }}
-              measure={{
-                accessor: "users",
-              }}
-              onClick={function _a() {}}
-              onDataPointClick={function _a() {}}
-              onLegendClick={function _a() {}}
-            />
+            <HomepagePieChart></HomepagePieChart>
           </Card>
           <Card
             header={

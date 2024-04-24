@@ -42,7 +42,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={
@@ -68,7 +68,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={
@@ -110,7 +110,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={
@@ -136,7 +136,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={
@@ -178,7 +178,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={
@@ -204,7 +204,7 @@ export default function NotificationPopover({
           }
           avatar={
             <Avatar size="XS">
-              <img src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
+              <img rel="preload" src="https://sap.github.io/ui5-webcomponents/images/avatars/woman_avatar_1.png" />
             </Avatar>
           }
           footnotes={

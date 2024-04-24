@@ -45,7 +45,7 @@ export default function Navbar({
         logo={
           <img
             alt="SAP Logo"
-            src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
+            // src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
           />
         }
         menuItems={
@@ -89,7 +89,7 @@ export default function Navbar({
         primaryTitle="Project Salvation"
         profile={
           <Avatar>
-            <img src={session.user.image} />
+            {/* <img src={session.user.image} /> */}
           </Avatar>
         }
         searchField={

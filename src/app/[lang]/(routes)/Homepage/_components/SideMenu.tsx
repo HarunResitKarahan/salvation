@@ -11,13 +11,14 @@ import "@ui5/webcomponents-icons/dist/locate-me.js";
 import "@ui5/webcomponents-icons/dist/calendar.js";
 import "@ui5/webcomponents-icons/dist/chain-link.js";
 import "@ui5/webcomponents-icons/dist/history.js";
+import "@ui5/webcomponents-icons/dist/message-warning.js";
 
 export default function SideMenu() {
   return (
     <>
       <SideNavigation
         className="max-sm:hidden p-3"
-        collapsed={true}
+        collapsed={false}
         fixedItems={
           <>
             <SideNavigationItem
@@ -32,7 +33,12 @@ export default function SideMenu() {
         onSelectionChange={function _a() {}}
       >
         <SideNavigationItem selected icon="database" text="Dashboard" />
-        <SideNavigationItem icon="group" text="People" wholeItemToggleable={true}>
+        <SideNavigationItem icon="message-warning" text="Issues" />
+        <SideNavigationItem
+          icon="group"
+          text="People"
+          wholeItemToggleable={true}
+        >
           <SideNavigationSubItem text="From My Team" />
           <SideNavigationSubItem text="From Other Teams" />
         </SideNavigationItem>

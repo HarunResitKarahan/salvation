@@ -106,7 +106,9 @@ export default function Main() {
             </FlexBox>
           </FlexBox>
         </Tab>
-        <Tab text="Issues" icon="message-warning" />
+        <Tab text="Issues" icon="message-warning">
+          <p>asd</p>
+        </Tab>
         <Tab text="User Directory" icon="tnt/package-diagram" />
         <Tab text="System" icon="it-system" />
       </TabContainer>

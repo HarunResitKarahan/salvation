@@ -16,37 +16,6 @@ export default function Homepage({
   lang: Locale;
   session: any;
 }) {
-  // const { navbar } = await getDictionary(lang)
-  // useEffect(() => {
-  //   // @ts-ignore
-  //   const sideBarElement = document
-  //     .querySelector("body > main > div > ui5-flexible-column-layout")
-  //     .shadowRoot.querySelector(
-  //       "div > div.ui5-fcl-column.ui5-fcl-column-animation.ui5-fcl-column--start"
-  //     );
-  //   // @ts-ignore
-  //   const slicer = document
-  //     .querySelector("body > main > div > ui5-flexible-column-layout")
-  //     .shadowRoot.querySelector(
-  //       "div > div.ui5-fcl-arrow-container.ui5-fcl-arrow-container-start"
-  //     );
-  //   // @ts-ignore
-  //   const middleColumnElement = document
-  //     .querySelector("body > main > div > ui5-flexible-column-layout")
-  //     .shadowRoot.querySelector(
-  //       "div > div.ui5-fcl-column.ui5-fcl-column-animation.ui5-fcl-column--middle"
-  //     );
-  //   // @ts-ignore
-  //   sideBarElement.style.minWidth = "fit-content";
-  //   // @ts-ignore
-  //   sideBarElement.style.maxWidth = "fit-content";
-  //   // @ts-ignore
-  //   middleColumnElement.style.minWidth = "100%";
-  //   // @ts-ignore
-  //   slicer.style.minWidth = "1%";
-  //   // @ts-ignore
-  //   slicer.style.maxWidth = "fit-content";
-  // }, []);
   return (
     <>
       <div className="flex w-full h-full pt-2 overflow-hidden">
