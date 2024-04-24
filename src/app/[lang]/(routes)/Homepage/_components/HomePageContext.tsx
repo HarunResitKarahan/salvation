@@ -14,6 +14,7 @@ import {
   Title,
   Toolbar,
   ToolbarSpacer,
+  ValueColor,
 } from "@ui5/webcomponents-react";
 import { LineChart, PieChart, ScatterChart } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/customize.js";
@@ -35,7 +36,7 @@ const HomepageLineChart = dynamic(
   {
     loading: () => (
       <LineChartPlaceHolder/>
-    ),
+    )
   }
 );
 const HomepageScatterChart = dynamic(
@@ -116,7 +117,7 @@ export default function HomePageContext() {
                 />
                 <NumericSideIndicator
                   number="34.7"
-                  state="Good"
+                  state={ValueColor.Good}
                   titleText="Deviation"
                   unit="%"
                 />
@@ -144,7 +145,7 @@ export default function HomePageContext() {
                 />
                 <NumericSideIndicator
                   number="34.7"
-                  state="Good"
+                  state={ValueColor.Good}
                   titleText="Deviation"
                   unit="%"
                 />
