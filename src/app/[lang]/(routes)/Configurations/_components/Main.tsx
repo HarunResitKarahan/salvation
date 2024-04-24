@@ -59,7 +59,7 @@ export default function Main() {
         >
           <FlexBox className="h-full rounded">
             <List
-              className="w-fit h-full min-w-fit mr-2 shadow bg-white rounded"
+              className="configurationsSideMenu w-fit h-full min-w-fit mr-2 shado rounded"
               growing="None"
               mode="None"
               // headerText=" "
@@ -91,7 +91,7 @@ export default function Main() {
               </StandardListItem>
               <StandardListItem icon="key">Password Policy</StandardListItem>
             </List>
-            <FlexBox className="w-full shadow bg-white rounded">
+            <FlexBox className="sapBaseColor w-full shadow rounded">
               <FlexBox className="container md:mx-auto p-6">
                 <Breadcrumbs
                   className="my-3"

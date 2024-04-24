@@ -44,6 +44,14 @@ body {
   display: block;
 }
 
+.sapBaseColor {
+  background-color: var(--sapBaseColor);
+}
+
+.sapBackgroundColor {
+  background-color: var(--sapBackgroundColor)
+}
+
 .homepageContent {
   overflow-x: hidden;
 }
@@ -62,6 +70,9 @@ body {
   border-radius: 100px;
 }
 
+.configurationsSideMenu {
+  background-color: var(--sapBaseColor)
+}
 
 
 /* * {
