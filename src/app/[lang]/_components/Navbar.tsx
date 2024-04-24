@@ -44,6 +44,14 @@ export default function Navbar({
   const popoverNotificationRef = useRef(null);
   const [ispopoverNotification, setIspopoverNotification] = useState(false);
   const router = useRouter();
+
+  const themes = [
+    { key: "sap_horizon", value: "Morning Horizon" },
+    { key: "sap_horizon_dark", value: "Evening Horizon" },
+    { key: "sap_fiori_3", value: "Quartz Light" },
+    { key: "sap_fiori_3_dark", value: "Quartz Dark" },
+  ];
+
   // @ts-ignore
   const handleShellBarSettingsClick = (e) => {
     // @ts-ignore
@@ -134,23 +142,33 @@ export default function Navbar({
         />
         <ShellBarItem icon="grid" text="Uygulamalar" />
       </ShellBar>
-      <Popover className="noPadding" ref={popoverPaletteRef} placementType="Bottom">
+      <Popover
+        className="noPadding"
+        ref={popoverPaletteRef}
+        placementType="Left"
+      >
         <List
           className="noPadding"
           growing="None"
-          mode="None"
+          mode="SingleSelect"
           onItemClick={function _a() {}}
           onItemClose={function _a() {}}
           onItemDelete={function _a() {}}
           onItemToggle={function _a() {}}
           onLoadMore={function _a() {}}
-          onSelectionChange={function _a() {}}
+          onSelectionChange={function _a(e) {
+            const { targetItem } = e.detail,
+              selectedTheme = targetItem.dataset.key;
+            // @ts-ignore
+            setTheme(selectedTheme);
+          }}
           separators="All"
         >
-          <StandardListItem key="sap_horizon">Morning Horizon</StandardListItem>
-          <StandardListItem key="sap_horizon_dark">Evening Horizon</StandardListItem>
-          <StandardListItem key="sap_fiori_3">Quartz Light</StandardListItem>
-          <StandardListItem key="sap_fiori_3_dark">Quartz Dark</StandardListItem>
+          {themes.map((element) => (
+            <StandardListItem key={element.key} data-key={element.key}>
+              {element.value}
+            </StandardListItem>
+          ))}
         </List>
       </Popover>
       <NotificationPopover
