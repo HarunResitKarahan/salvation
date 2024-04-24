@@ -9,14 +9,6 @@ import SideMenu from "./_components/SideMenu";
 import { FlexBox, Grid } from "@ui5/webcomponents-react";
 import Dashboard from "./_components/Dashboard";
 import { white } from "tailwindcss/colors";
-import "@ui5/webcomponents/dist/Assets.js";
-import "@ui5/webcomponents-fiori/dist/Assets.js";
-import {
-  getTheme,
-  setTheme,
-} from "@ui5/webcomponents-base/dist/config/Theme.js";
-
-setTheme("sap_fiori_3_dark");
 
 export default function Homepage({
   lang,

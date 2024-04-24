@@ -9,6 +9,7 @@ import {
   ShellBar,
   ShellBarItem,
   StandardListItem,
+  Switch,
 } from "@ui5/webcomponents-react";
 import React, { useEffect, useRef, useState } from "react";
 import "@ui5/webcomponents-icons/dist/log.js";
@@ -20,6 +21,15 @@ import SignOutButton from "./SignOutButton";
 import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 import NotificationPopover from "./NotificationPopover";
+import "@ui5/webcomponents/dist/Assets.js";
+import "@ui5/webcomponents-fiori/dist/Assets.js";
+import {
+  getTheme,
+  setTheme,
+} from "@ui5/webcomponents-base/dist/config/Theme.js";
+
+setTheme("sap_horizon");
+
 export default function Navbar({
   lang,
   session,
@@ -30,6 +40,7 @@ export default function Navbar({
   console.log("Navbar.tsx", session);
   const popoverRef = useRef(null);
   const popoverProfileRef = useRef(null);
+  const popoverPaletteRef = useRef(null);
   const popoverNotificationRef = useRef(null);
   const [ispopoverNotification, setIspopoverNotification] = useState(false);
   const router = useRouter();
@@ -38,14 +49,26 @@ export default function Navbar({
     // @ts-ignore
     router.push("/Configurations");
   };
+  // @ts-ignore
+  const handleShellBarPaletteClick = (e) => {
+    // @ts-ignore
+    const popoverElement = popoverPaletteRef.current;
+    // @ts-ignore
+    if (popoverElement.isOpen()) {
+      // @ts-ignore
+      popoverElement.close();
+    } else {
+      // @ts-ignore
+      popoverElement.showAt(e.detail.targetRef);
+    }
+  };
 
   return (
     <>
       <ShellBar
         logo={
           <img
-            alt="SAP Logo"
-            // src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
+          // src="https://e7.pngegg.com/pngimages/36/323/png-clipart-business-triangle-company-logo-icon-express.png"
           />
         }
         menuItems={
@@ -87,11 +110,7 @@ export default function Navbar({
         }}
         onSearchButtonClick={function _a() {}}
         primaryTitle="Project Salvation"
-        profile={
-          <Avatar>
-            {/* <img src={session.user.image} /> */}
-          </Avatar>
-        }
+        profile={<Avatar>{/* <img src={session.user.image} /> */}</Avatar>}
         searchField={
           <Input icon={<Icon interactive name="search" />} showClearIcon />
         }
@@ -104,14 +123,35 @@ export default function Navbar({
       >
         {/* <ShellBarItem icon="log" text="Oturumu Kapat" /> */}
         <ShellBarItem
+          onClick={handleShellBarPaletteClick}
+          icon="palette"
+          text="Tema"
+        />
+        <ShellBarItem
           onClick={handleShellBarSettingsClick}
           icon="action-settings"
           text="Ayarlar"
         />
         <ShellBarItem icon="grid" text="Uygulamalar" />
       </ShellBar>
-      <Popover ref={popoverRef} placementType="Bottom">
-        Hello there!
+      <Popover className="noPadding" ref={popoverPaletteRef} placementType="Bottom">
+        <List
+          className="noPadding"
+          growing="None"
+          mode="None"
+          onItemClick={function _a() {}}
+          onItemClose={function _a() {}}
+          onItemDelete={function _a() {}}
+          onItemToggle={function _a() {}}
+          onLoadMore={function _a() {}}
+          onSelectionChange={function _a() {}}
+          separators="All"
+        >
+          <StandardListItem key="sap_horizon">Morning Horizon</StandardListItem>
+          <StandardListItem key="sap_horizon_dark">Evening Horizon</StandardListItem>
+          <StandardListItem key="sap_fiori_3">Quartz Light</StandardListItem>
+          <StandardListItem key="sap_fiori_3_dark">Quartz Dark</StandardListItem>
+        </List>
       </Popover>
       <NotificationPopover
         popoverRef={popoverNotificationRef}

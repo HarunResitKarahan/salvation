@@ -73,7 +73,9 @@ body {
 .configurationsSideMenu {
   background-color: var(--sapBaseColor)
 }
-
+.noPadding::part(content) {
+  padding: 0;
+}
 
 /* * {
   -ms-overflow-style: none;

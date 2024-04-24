@@ -16,7 +16,6 @@ import {
   Link,
 } from "@ui5/webcomponents-react";
 import React, { useRef, useState } from "react";
-// import "@ui5/webcomponents-icons/dist/slim-arrow-left.js";
 import "@ui5/webcomponents-icons/dist/AllIcons.js";
 
 export default function ViewMessage() {
