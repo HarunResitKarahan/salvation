@@ -18,10 +18,10 @@ bun dev
 
 </br>
 <div style="display: flex; justify-content: space-evenly">
-  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_3.png" width="400">
-  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_1.png" width="400">
-  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_2.png" width="400">
-  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_4.png" width="400">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_3.png" width="700">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_1.png" width="700">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_2.png" width="700">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_4.png" width="700">
 </div>
 </br>
 
