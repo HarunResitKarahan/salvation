@@ -18,8 +18,11 @@ bun dev
 
 </br>
 <div style="display: flex; justify-content: space-evenly">
-<img src="https://github.com/HarunResitKarahan/Photocell-Door-with-Arduino-and-face_recognition-Library/blob/main/Photocell-Door-Image1.jpeg" width="400">
-<img src="https://github.com/HarunResitKarahan/Photocell-Door-with-Arduino-and-face_recognition-Library/blob/main/Photocell-Door-Image2.jpeg" width="400"></div>
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_3.png" width="400">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_1.png" width="400">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_2.png" width="400">
+  <img src="https://github.com/HarunResitKarahan/salvation/blob/main/public/ProjectImages/Screenshot_4.png" width="400">
+</div>
 </br>
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
